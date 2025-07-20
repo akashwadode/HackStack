@@ -1,10 +1,12 @@
-
 // src/App.jsx
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Auth from './pages/Auth';
 import Dashboard from './pages/Dashboard';
 import AppNavbar from './components/Navbar';
 import AddProject from './pages/AddProject';
+import PublicPortfolio from './pages/PublicPorfolio';
+import ProtectedRoute from './components/ProtectedRoute'; // ✅ Import it
+
 function LayoutWrapper() {
   const location = useLocation();
   const hideNavbar = location.pathname === '/' || location.pathname === '/login' || location.pathname === '/signup';
@@ -16,8 +18,21 @@ function LayoutWrapper() {
         <Route path="/" element={<Auth />} />
         <Route path="/login" element={<Auth />} />
         <Route path="/signup" element={<Auth />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/add" element={<AddProject />} />
+
+        {/* ✅ Protect dashboard and add project */}
+        <Route path="/dashboard" element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        } />
+        <Route path="/add" element={
+          <ProtectedRoute>
+            <AddProject />
+          </ProtectedRoute>
+        } />
+
+        {/* Public portfolio stays open */}
+        <Route path="/u/:username" element={<PublicPortfolio />} />
       </Routes>
     </>
   );
