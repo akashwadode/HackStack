@@ -67,7 +67,8 @@ export default function Dashboard() {
     <Container fluid className="dashboard-container p-4">
       <Row>
         <Col md={3}>
-          {profile && <ProfileSidebar profile={profile} />}
+          {profile && <ProfileSidebar profile={profile} totalProjects={projects.length} />
+}
         </Col>
 
         <Col md={9}>
