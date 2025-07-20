@@ -6,7 +6,7 @@ HackStack is a sleek and user-friendly web platform for developers—especially 
 
 ## 🔗 Live Demo
 
-Visit: [HackStack Live Site](https://your-netlify-site-url.netlify.app) <!-- Replace with your live site URL -->
+Visit: [HackStack Live Site](https://strong-torte-758d8a.netlify.app/) <!-- Replace with your live site URL -->
 
 ---
 
