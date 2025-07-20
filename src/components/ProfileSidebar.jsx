@@ -11,18 +11,28 @@ export default function ProfileSidebar({ profile, totalProjects }) {
   const navigate = useNavigate();
 
   const avatarUrl = profile.github_url
-    ? `https://avatars.githubusercontent.com/${profile.github_url.split("/").pop()}`
-    : `https://ui-avatars.com/api/?name=${profile.username?.[0]?.toUpperCase() || "U"}&background=random`;
+    ? `https://avatars.githubusercontent.com/${profile.github_url
+        .split("/")
+        .pop()}`
+    : `https://ui-avatars.com/api/?name=${
+        profile.username?.[0]?.toUpperCase() || "U"
+      }&background=random`;
 
-  const joinedDate = new Date(profile.created_at).toLocaleDateString(undefined, {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+  const joinedDate = new Date(profile.created_at).toLocaleDateString(
+    undefined,
+    {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }
+  );
 
   useEffect(() => {
     const fetchEmail = async () => {
-      const { data: { user }, error } = await supabase.auth.getUser();
+      const {
+        data: { user },
+        error,
+      } = await supabase.auth.getUser();
       if (user && !error) setEmail(user.email);
     };
     fetchEmail();
@@ -45,11 +55,15 @@ export default function ProfileSidebar({ profile, totalProjects }) {
           {email && <div className="text-muted small mb-2">{email}</div>}
 
           {profile.bio && (
-            <p className="text-center fst-italic small border rounded p-2 bg-light w-100">{profile.bio}</p>
+            <p className="text-center fst-italic small border rounded p-2 bg-light w-100">
+              {profile.bio}
+            </p>
           )}
 
           <div className="w-100 mt-3">
-            <h6 className="text-uppercase text-muted fw-bold mb-2">Profile Info</h6>
+            <h6 className="text-uppercase text-muted fw-bold mb-2">
+              Profile Info
+            </h6>
             <div className="mb-2">
               <strong>Joined:</strong> {joinedDate}
             </div>
@@ -74,7 +88,9 @@ export default function ProfileSidebar({ profile, totalProjects }) {
 
           {profile.tech_stack?.length > 0 && (
             <div className="w-100 mt-3">
-              <h6 className="text-uppercase text-muted fw-bold mb-2">Tech Stack</h6>
+              <h6 className="text-uppercase text-muted fw-bold mb-2">
+                Tech Stack
+              </h6>
               <div className="d-flex flex-wrap gap-2">
                 {profile.tech_stack.map((tech, i) => (
                   <Badge key={i} bg="primary" className="text-uppercase">
@@ -86,14 +102,17 @@ export default function ProfileSidebar({ profile, totalProjects }) {
           )}
 
           <div className="w-100 mt-4 d-grid gap-2">
-            <Button variant="outline-primary" size="sm" onClick={() => setShowModal(true)}>
+            <Button
+              variant="outline-primary"
+              size="sm"
+              onClick={() => setShowModal(true)}
+            >
               Edit Profile
             </Button>
             <Button
               variant="outline-success"
               size="sm"
-              onClick={() => navigate(`/u/${profile.username}`)}
-              disabled={!profile.username}
+              onClick={() => navigate(`/u/id/${profile.id}`)}
             >
               Public Portfolio
             </Button>

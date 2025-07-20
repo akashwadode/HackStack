@@ -19,7 +19,7 @@ function LayoutWrapper() {
         <Route path="/signup" element={<Auth />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/add" element={<AddProject />} />
-        <Route path="/u/:username" element={<PublicPortfolio />} />
+        <Route path="/u/id/:userId" element={<PublicPortfolio />} />
       </Routes>
     </>
   );
