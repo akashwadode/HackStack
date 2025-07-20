@@ -60,9 +60,9 @@ Visit: [HackStack Live Site](https://your-netlify-site-url.netlify.app) <!-- Rep
 
 | Dashboard | Public Portfolio |
 |----------|------------------|
-| ![Dashboard](./screenshots/dashboard.png) | ![Portfolio](./screenshots/portfolio.png) |
+| ![Dashboard](./screenshots/img2.png) | ![Portfolio](./screenshots/img4.png) |
 
-> _Place your screenshots in the `screenshots/` folder and update paths._
+
 
 ---
 
