@@ -5,7 +5,6 @@ import Dashboard from './pages/Dashboard';
 import AppNavbar from './components/Navbar';
 import AddProject from './pages/AddProject';
 import PublicPortfolio from './pages/PublicPorfolio';
-import ProtectedRoute from './components/ProtectedRoute'; // ✅ Import it
 
 function LayoutWrapper() {
   const location = useLocation();
@@ -18,20 +17,8 @@ function LayoutWrapper() {
         <Route path="/" element={<Auth />} />
         <Route path="/login" element={<Auth />} />
         <Route path="/signup" element={<Auth />} />
-
-        {/* ✅ Protect dashboard and add project */}
-        <Route path="/dashboard" element={
-          <ProtectedRoute>
-            <Dashboard />
-          </ProtectedRoute>
-        } />
-        <Route path="/add" element={
-          <ProtectedRoute>
-            <AddProject />
-          </ProtectedRoute>
-        } />
-
-        {/* Public portfolio stays open */}
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/add" element={<AddProject />} />
         <Route path="/u/:username" element={<PublicPortfolio />} />
       </Routes>
     </>

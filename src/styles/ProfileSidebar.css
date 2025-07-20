@@ -1,12 +1,57 @@
 .profile-card {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 20px;
+  background: #fdfdfd;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease-in-out;
+}
+
+.profile-card:hover {
+  transform: translateY(-3px);
 }
 
 .profile-avatar {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   object-fit: cover;
+  border: 3px solid #0d6efd;
+  margin-bottom: 12px;
+}
+
+.profile-username {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.profile-github a {
+  font-size: 0.9rem;
+  color: #6c757d;
+  text-decoration: none;
+}
+
+.profile-github a:hover {
+  text-decoration: underline;
+}
+
+.profile-meta {
+  margin-top: 16px;
+  font-size: 0.95rem;
+}
+
+.profile-meta strong {
+  display: inline-block;
+  width: 120px;
+  color: #495057;
+}
+
+.tech-badges {
+  margin-top: 12px;
+}
+
+.tech-badges .badge {
+  font-size: 0.75rem;
+  margin-right: 6px;
+  margin-bottom: 6px;
 }

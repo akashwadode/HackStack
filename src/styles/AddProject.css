@@ -1,0 +1,19 @@
+.add-project-container {
+  max-width: 700px;
+  margin: auto;
+  padding-top: 2rem;
+}
+
+.add-project-container h2 {
+  font-weight: 600;
+  color: #333;
+}
+
+.add-project-container .form-label {
+  font-weight: 500;
+}
+
+.add-project-container .form-control::placeholder {
+  color: #aaa;
+  font-size: 0.95rem;
+}
