@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
+
 import { Card, Button, Badge } from "react-bootstrap";
 import {
   Github,
@@ -10,7 +12,8 @@ import ProjectModal from "./ProjectModal"; // ✅ Import your modal component
 
 export default function HackathonCard({ project, refresh }) {
   const [showModal, setShowModal] = useState(false);
-
+const location = useLocation();
+const isPublicView = location.pathname.startsWith("/u/id/");
   const formatDate = (dateStr) => {
     if (!dateStr) return "";
     const date = new Date(dateStr);
@@ -25,7 +28,7 @@ export default function HackathonCard({ project, refresh }) {
     <>
       <Card
         className="hackathon-card shadow-sm"
-        onClick={() => setShowModal(true)}
+        onClick={() => {if (!isPublicView) setShowModal(true);}}
         style={{ cursor: "pointer" }}
       >
         <div className="thumbnail-wrapper">
@@ -112,7 +115,6 @@ export default function HackathonCard({ project, refresh }) {
         </Card.Body>
       </Card>
 
-      {/* ✅ Show the clean modal view on click */}
       <ProjectModal
         show={showModal}
         handleClose={() => setShowModal(false)}

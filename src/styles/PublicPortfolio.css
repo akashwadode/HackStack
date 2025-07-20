@@ -1,0 +1,50 @@
+.portfolio-container {
+  display: flex;
+  gap: 2rem; /* Space between profile and projects */
+}
+
+.profile-section {
+  flex: 0 0 350px; /* Fixed width for profile section */
+  position: sticky;
+  top: 20px; /* Distance from the top of the viewport */
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.15rem 1.75rem rgba(58, 59, 69, 0.15);
+  padding: 2rem;
+}
+
+.projects-section {
+  flex: 1; /* Take the remaining space */
+}
+
+.profile-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--secondary-color);
+  box-shadow: 0 0.15rem 1.75rem rgba(58, 59, 69, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap; /* Allow badges to wrap */
+  gap: 0.5rem; /* Space between badges */
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
