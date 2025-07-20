@@ -9,9 +9,9 @@ export default function AppNavbar() {
       <Container className="navbar-container">
         <Link to="/dashboard" className="navbar-brand-title">HackStack</Link>
 
-        <div className="profile-icon">
+        {/* <div className="profile-icon">
           <i className="fas fa-user-circle"></i>
-        </div>
+        </div> */}
       </Container>
     </Navbar>
   );
