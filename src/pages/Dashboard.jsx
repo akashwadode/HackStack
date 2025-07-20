@@ -87,8 +87,8 @@ export default function Dashboard() {
               value={sortOrder}
               onChange={handleSortChange}
             >
-              <option value="desc">Sort by Start Date (Newest)</option>
-              <option value="asc">Sort by Start Date (Oldest)</option>
+              <option value="desc">Sort (Newest)</option>
+              <option value="asc">Sort (Oldest)</option>
             </Form.Select>
           </div>
 
