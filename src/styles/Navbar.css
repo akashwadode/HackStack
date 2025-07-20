@@ -1,0 +1,34 @@
+.custom-navbar {
+  background-color: #f9f9f9;
+  padding: 10px 0;
+  border-bottom: 1px solid #e1e4e8;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+.navbar-brand-title:hover {
+  text-decoration: underline;
+}
+
+.profile-icon img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.profile-icon img:hover {
+  transform: scale(1.1);
+}
